@@ -1,0 +1,29 @@
+<script>
+    // define a summation function. it is a normal function
+    function summation(a, b) {
+        return a + b;
+    }
+
+    // define a product function. this is function expression
+    const product = function (x, y) {
+        return x * y;
+    };
+
+    // define a product function. this is arrow function
+    const productArrow = (x, y) => x * y;
+
+    // sum two integers, two strings, a integer with a string (gives a string, converting int to string)
+    console.log(summation(1, 2));
+    console.log(summation("a", "b"));
+    console.log(summation(1, "a"));
+
+    // product two integers, two strings, a integer with a string (gives a string, converting int to string)
+    console.log(product(1, 2));
+    console.log(product("a", "b"));
+    console.log(product(1, "a"));
+
+    // product two integers, two strings, a integer with a string (gives a string, converting int to string)
+    console.log(productArrow(1, 2));
+    console.log(productArrow("a", "b"));
+    console.log(productArrow(1, "a"));
+</script>
