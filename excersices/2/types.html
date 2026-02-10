@@ -1,0 +1,33 @@
+<script>
+    // let's define a number and a string type variable
+    let x = 1.1;
+    const y = "hello";
+    let z = "12.3";
+    let w = "0x12";
+
+    // let's check types
+    console.log("\n------ check types ------");
+    console.log(typeof x);
+    console.log("is x object?:", typeof x === "object");
+    console.log("is x number?:", typeof x === "number");
+
+    // type conversion
+    console.log("\n------ type conversion ------");
+    console.log("'", y, "'", "numberified is:", Number(y));
+    console.log("'", z, "'", "numberified is:", Number(z));
+    console.log("'", w, "'", "numberified is:", Number(w));
+
+    // check numberification
+    console.log("\n------ check numberification ------");
+    console.log("is '", x, "'", "numberifiable?", !isNaN(Number(x)));
+    console.log("is '", y, "'", "numberifiable?", !isNaN(Number(y)));
+    console.log("is '", z, "'", "numberifiable?", !isNaN(Number(z)));
+    console.log("is '", w, "'", "numberifiable?", !isNaN(Number(w)));
+
+    // check falsey values
+    console.log("\n------ check falsey values ------");
+    const arr = [false, 0, "", null, undefined, NaN];
+    for (let i = 0; i < arr.length; i++) {
+        console.log("is '", arr[i], "'", "falsey?", !arr[i]);
+    }
+</script>

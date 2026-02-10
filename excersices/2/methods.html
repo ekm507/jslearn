@@ -1,0 +1,22 @@
+<script>
+    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log("a", arr);
+
+    a = arr.map((x) => x ** 2);
+    console.log("a2", a);
+
+    b = arr.filter((x) => x % 2 === 0);
+    console.log("evens of a", b);
+
+    c = arr.reduce((acc, x) => acc + x, 0);
+    console.log("sum of a", c);
+
+    d = arr.some((x) => x > 5);
+    console.log("some of a > 5", d);
+
+    e = arr.every((x) => x >= 0);
+    console.log("every of a >= 0", e);
+
+    f = arr.find((x) => x < 5 && x % 2 === 1);
+    console.log("find odd number less than 5 in a", f);
+</script>
