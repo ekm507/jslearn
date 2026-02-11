@@ -8,6 +8,7 @@
 - basic control flow
 - basic methods including map, filter, reduce, some, every, find
 - functions
+- template literals
 
 ## exercise 2
 
