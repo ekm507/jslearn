@@ -1,0 +1,50 @@
+<!doctype html>
+<!--this is from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures-->
+<html>
+    <head>
+        <title>Counter Example</title>
+        <style>
+            body {
+                color: lightslategray;
+                font-size: 50px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="buttons"></div>
+        <script>
+            function Colorizer(color) {
+                return function () {
+                    document.body.style.color = color;
+                };
+            }
+            function makeButton(id) {
+                const button = document.createElement("button");
+                button.id = id;
+                document.getElementById("buttons").appendChild(button);
+                return button;
+            }
+            colors = [
+                "lightslategray",
+                "lightblue",
+                "lightgreen",
+                "lightyellow",
+                "lightpink",
+                "lightcoral",
+            ];
+
+            function MakeButtons(colors) {
+                colors.forEach((color, index) => {
+                    button = makeButton(`b_${index}`);
+                    button.textContent = color;
+                    button.style.backgroundColor = color;
+                    // button.style.color = "white";
+                    button.addEventListener("click", Colorizer(color));
+                });
+            }
+            MakeButtons(colors);
+        </script>
+        <p>this is some paragraph in some color</p>
+    </body>
+</html>
