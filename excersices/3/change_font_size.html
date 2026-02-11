@@ -1,0 +1,29 @@
+<!doctype html>
+<!--this is from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures-->
+<html>
+    <head>
+        <title>Counter Example</title>
+        <style>
+            body {
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function MakeSizer(size) {
+                return function () {
+                    document.body.style.fontSize = `${size}px`;
+                };
+            }
+        </script>
+        <button onclick="MakeSizer(16)()">16</button>
+        <button onclick="MakeSizer(18)()">18</button>
+        <button onclick="MakeSizer(20)()">20</button>
+        <button id="size-24">24</button>
+        <script>
+            document.getElementById("size-24").onclick = MakeSizer(24);
+        </script>
+        <p>this is some paragraph in some fontsize</p>
+    </body>
+</html>
