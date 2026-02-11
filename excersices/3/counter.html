@@ -1,7 +1,9 @@
+<p id="count">counter is here</p>
+<button id="add">add</button>
 <script>
     // wrap a function into another to give it some static variables
-    function counterer() {
-        let count = 0;
+    function counterer(initial = 0) {
+        let count = initial;
         return function () {
             count += 1;
             return count;
@@ -11,7 +13,9 @@
     // make a counter function
     counter = counterer();
 
-    // start counting
-    console.log(counter());
-    console.log(counter());
+    // bind the click event to the button
+    document.getElementById("add").addEventListener("click", () => {
+        count = counter();
+        document.getElementById("count").textContent = count;
+    });
 </script>
