@@ -1,6 +1,6 @@
 // define a function that gives a counter
-function counterer() {
-  let count = 0;
+function counterer(initial = 0) {
+  let count = initial;
   return function () {
     count += 1;
     return count;
