@@ -1,0 +1,17 @@
+<script>
+    // wrap a function into another to give it some static variables
+    function counterer() {
+        let count = 0;
+        return function () {
+            count += 1;
+            return count;
+        };
+    }
+
+    // make a counter function
+    counter = counterer();
+
+    // start counting
+    console.log(counter());
+    console.log(counter());
+</script>
