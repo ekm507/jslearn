@@ -87,3 +87,8 @@ buttons.forEach((button) => {
     handlekey(button.textContent, display);
   });
 });
+
+window.addEventListener("keypress", keyhandler);
+function keyhandler(event) {
+  handlekey(event.key, display);
+}
