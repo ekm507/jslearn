@@ -82,7 +82,7 @@ function calculate() {
   previous = result;
 }
 
-buttons.forEach((button) => {
+keysContainer.childNodes.forEach((button) => {
   button.addEventListener("click", () => {
     handlekey(button.textContent, display);
   });
