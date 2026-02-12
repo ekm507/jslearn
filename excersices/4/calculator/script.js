@@ -61,3 +61,22 @@ function handlekey(key, display) {
   }
   console.log(key, display.textContent, operator, previous);
 }
+
+function calculate() {
+  const operators = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "*": (a, b) => a * b,
+    "/": (a, b) => a / b,
+  };
+  result = operators[operator](previous, current);
+  display.textContent = result;
+  operator = null;
+  current = result;
+}
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    handlekey(button.textContent, display);
+  });
+});
