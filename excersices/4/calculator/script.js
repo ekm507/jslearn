@@ -60,11 +60,9 @@ function handlekey(key, display) {
   if (current === "") {
     current = "0";
   }
-  console.log(key, display.textContent, operator, previous);
 }
 
 function calculate() {
-  console.log("Calculating...");
   const operators = {
     "+": (a, b) => a + b,
     "-": (a, b) => a - b,
