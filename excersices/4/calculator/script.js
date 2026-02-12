@@ -28,7 +28,7 @@ for (const key of keysLayout) {
   buttons.push(button);
 }
 
-let current = "";
+let current = "0";
 let operator = null;
 let previous = null;
 
