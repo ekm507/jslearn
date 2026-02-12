@@ -34,44 +34,52 @@ let previous = null;
 
 function handlekey(key, display) {
   display = document.getElementById("display");
-  if (key in ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"]) {
-    if (display.textContent === "0") display.textContent = "";
-    display.textContent += key;
-    current = display.textContent;
-  } else if (key === ".") {
-    if (!display.textContent.includes(".")) {
-      display.textContent += key;
-    } else if (display.textContent[display.textContent.length - 1] === ".") {
-      display.textContent = display.textContent.slice(0, -1);
+  if (["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"].includes(key)) {
+    if (current === "0") {
+      display.textContent = "";
+      current = "";
     }
-  } else if (key in ["+", "-", "*", "/"]) {
+    current += key;
+  } else if (key === ".") {
+    if (!current.includes(".")) {
+      current += key;
+    } else if (current[current.length - 1] === ".") {
+      current = current.slice(0, -1);
+    }
+  } else if (["+", "-", "*", "/"].includes(key)) {
     operator = key;
-    previous = display.textContent;
-    current = "";
-    display.textContent = "0";
     calculate();
   } else if (key === "C") {
-    if (display.textContent === "0") {
+    if (current === "0") {
       current = "";
       operator = null;
       previous = null;
     } else {
-      display.textContent = "0";
+      current = "0";
     }
   }
+  if (current === "") {
+    current = "0";
+  }
+  display.textContent = current;
   console.log(key, display.textContent, operator, previous);
 }
 
 function calculate() {
+  console.log("Calculating...");
   const operators = {
     "+": (a, b) => a + b,
     "-": (a, b) => a - b,
     "*": (a, b) => a * b,
     "/": (a, b) => a / b,
   };
-  result = operators[operator](previous, current);
+  if (previous === null) {
+    previous = current;
+    current = "0";
+    return;
+  }
+  result = operators[operator](+previous, +current);
   display.textContent = result;
-  operator = null;
   current = result;
 }
 
