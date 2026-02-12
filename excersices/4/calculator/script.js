@@ -20,12 +20,10 @@ const keysLayout = [
 const keysContainer = document.getElementById("keys");
 // const display = document.getElementById("display");
 
-buttons = [];
 for (const key of keysLayout) {
   button = document.createElement("button");
   button.textContent = key;
   keysContainer.appendChild(button);
-  buttons.push(button);
 }
 
 let current = "0";
