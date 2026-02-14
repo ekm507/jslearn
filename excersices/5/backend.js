@@ -17,8 +17,9 @@ function createItem(name, description, price, image) {
   return info.lastInsertRowid;
 }
 
-// createItem("doll", "A doll that looks like Erfan", 799, "img/doll.jpg");
-// createItem("Hairpin", "A flower looking hairpin made of leather", 449, "img/hairpin.jpg",);
+// db.prepare("DROP * FROM items").run();
+createItem("عروسک", "عروسک شبیه عرفان", 799, "img/doll.jpg");
+createItem("سنجاق سر", "سنجاق سر چرمی به شکل گل", 449, "img/hairpin.jpg");
 
 const app = new Express();
 app.use(Express.json());
