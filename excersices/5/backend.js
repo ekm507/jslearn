@@ -7,7 +7,7 @@ const db = new Database(dbfilename);
 
 const app = new Express();
 app.use(Express.json());
-app.use(cors("*"));
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
   res.send("Back-end is running 😜\n");
