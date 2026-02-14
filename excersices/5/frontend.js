@@ -18,6 +18,7 @@ async function main() {
 }
 
 async function getItems() {
+  document.getElementById("container").innerHTML = "";
   const res = await fetch(joinPath("/items"));
   const items = await res.json();
   for (const item of items) {
@@ -28,7 +29,7 @@ async function getItems() {
     const desc = document.createElement("p");
     desc.textContent = item.description;
     const price = document.createElement("p");
-    price.textContent = item.price;
+    price.textContent = item.price + " ت";
     const image = document.createElement("img");
     image.src = item.image;
     div.appendChild(name);
