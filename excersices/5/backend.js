@@ -23,6 +23,11 @@ function createItem(name, description, price, image) {
 const app = new Express();
 app.use(Express.json());
 app.use(Express.static("public"));
+app.use(
+  cors({
+    origin: "http://localhost:8000",
+  }),
+);
 
 app.get("/", (req, res) => {
   res.send("Back-end is running 😜\n");
