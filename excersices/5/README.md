@@ -7,3 +7,15 @@ I am building something like a shopping website. it can show some items. just th
 - parse response
 - make a back-end server with express
 - connect to sqlite
+- use npm
+- 
+## how to run this:
+
+install dependencies with
+```
+npm install
+```
+run backend with
+```
+node backend.js
+```
