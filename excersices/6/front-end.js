@@ -78,7 +78,7 @@ function give_items_click_events() {
 
 async function main() {
   await get_items();
-  give_items_click_events();
+  await give_items_click_events();
 }
 
 main();
