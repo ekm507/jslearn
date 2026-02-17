@@ -38,6 +38,11 @@ async function get_items() {
   }
 }
 
+function update_cart_count() {
+  const cart_count = document.getElementById("cart-count");
+  cart_count.textContent = Object.keys(cart).length;
+}
+
 function give_items_click_events() {
   const itemsContainer = document.getElementById("items");
 
@@ -47,12 +52,12 @@ function give_items_click_events() {
 
     plus_button.addEventListener("click", () => {
       add_to_cart(itemEl.id.split("-")[1]);
-      console.log(cart);
+      update_cart_count();
     });
 
     minus_button.addEventListener("click", () => {
       remove_from_cart(itemEl.id.split("-")[1]);
-      console.log(cart);
+      update_cart_count();
     });
   }
 }
