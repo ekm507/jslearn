@@ -21,8 +21,8 @@ async function get_items() {
         <p><em>${item.name}</em></p>
         <p>${item.price}$</p>
         <p class="quantity">0</p>
-        <p class="add clickable">+</p>
-        <p class="remove clickable">-</p>
+        <button class="add clickable">+</button>
+        <button class="remove clickable">-</button>
 
       </div>`;
   }
