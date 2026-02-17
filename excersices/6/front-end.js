@@ -1,4 +1,5 @@
 const API_BASE = "http://localhost:3000";
+const cart = [];
 
 async function get_items() {
   const response = await fetch(API_BASE + "/items");
@@ -11,4 +12,27 @@ async function get_items() {
   }
 }
 
-get_items();
+function add_to_cart(item_id) {
+  cart.push(item_id);
+}
+
+function give_items_click_events() {
+  item = document.getElementById("item-1");
+  console.log(item);
+
+  items = document.getElementById("items");
+  for (item of items.children) {
+    console.log(item.getElementsByTagName("p")[0].innerText);
+    item.addEventListener("click", () => {
+      add_to_cart(item.id.split("-")[1]);
+      console.log(cart);
+    });
+  }
+}
+
+async function main() {
+  await get_items();
+  await give_items_click_events();
+}
+
+main();
