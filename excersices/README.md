@@ -7,3 +7,5 @@
 - Exercise 4: MiniProjects
   - Rock Paper Scissors: js objects
   - Calculator: working with html, algorithms
+- Exercise 5: fetch api, back-end with express.js
+- Exercise 6: local storage, fetch items from back-end, more on express.js
