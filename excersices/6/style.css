@@ -38,4 +38,25 @@
 
 /*make cart item stick to page top even while scrolling*/
 .cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+#cart {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 40px;
+}
+#cart:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
