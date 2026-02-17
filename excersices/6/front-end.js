@@ -52,11 +52,15 @@ function give_items_click_events() {
 
     plus_button.addEventListener("click", () => {
       add_to_cart(itemEl.id.split("-")[1]);
+      itemEl.querySelector(".quantity").textContent =
+        cart[itemEl.id.split("-")[1]] || 0;
       update_cart_count();
     });
 
     minus_button.addEventListener("click", () => {
       remove_from_cart(itemEl.id.split("-")[1]);
+      itemEl.querySelector(".quantity").textContent =
+        cart[itemEl.id.split("-")[1]] || 0;
       update_cart_count();
     });
   }
