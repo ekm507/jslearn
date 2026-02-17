@@ -32,7 +32,7 @@ async function get_items() {
         <p>${item.price}$</p>
         <p class="quantity">0</p>
         <button class="add clickable">+</button>
-        <button class="remove clickable">-</button>
+        <button class="remove clickable" disabled>-</button>
 
       </div>`;
   }
@@ -54,6 +54,11 @@ function give_items_click_events() {
       add_to_cart(itemEl.id.split("-")[1]);
       itemEl.querySelector(".quantity").textContent =
         cart[itemEl.id.split("-")[1]] || 0;
+
+      if (+itemEl.querySelector(".quantity").textContent > 0) {
+        itemEl.querySelector(".remove").disabled = false;
+      }
+
       update_cart_count();
     });
 
@@ -61,6 +66,11 @@ function give_items_click_events() {
       remove_from_cart(itemEl.id.split("-")[1]);
       itemEl.querySelector(".quantity").textContent =
         cart[itemEl.id.split("-")[1]] || 0;
+
+      if (+itemEl.querySelector(".quantity").textContent <= 0) {
+        itemEl.querySelector(".remove").disabled = true;
+      }
+
       update_cart_count();
     });
   }
