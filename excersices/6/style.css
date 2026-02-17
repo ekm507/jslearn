@@ -1,0 +1,41 @@
+#items {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+    gap: 10px;
+}
+
+.item:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.item {
+    text-align: center;
+    align-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    width: 60px;
+}
+
+.item p {
+    margin: 0;
+}
+
+.item p:first-child {
+    font-size: 24px;
+    border: 2px solid #000;
+}
+
+.item p:nth-child(2) {
+    font-style: italic;
+}
+
+.item p:last-child {
+    font-weight: bold;
+}
+
+/*make cart item stick to page top even while scrolling*/
+.cart {
+}
