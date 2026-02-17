@@ -78,7 +78,8 @@ function give_items_click_events() {
 
 async function main() {
   await get_items();
-  await give_items_click_events();
+  give_items_click_events();
+  give_cart_event();
 }
 
 main();
