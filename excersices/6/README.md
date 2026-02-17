@@ -10,3 +10,4 @@ let's build a shopping site
 ## things to learn
 - browser local storage
 - more on API call
+- learn more css
