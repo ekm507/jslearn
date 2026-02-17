@@ -8,6 +8,16 @@ function add_to_cart(item_id) {
     cart[item_id] = 1;
   }
 }
+
+function remove_from_cart(item_id) {
+  if (item_id in cart) {
+    cart[item_id]--;
+    if (cart[item_id] === 0) {
+      delete cart[item_id];
+    }
+  }
+}
+
 async function get_items() {
   const response = await fetch(API_BASE + "/items");
   const items = await response.json();
@@ -32,8 +42,16 @@ function give_items_click_events() {
   const itemsContainer = document.getElementById("items");
 
   for (const itemEl of itemsContainer.children) {
-    itemEl.addEventListener("click", () => {
+    const plus_button = itemEl.querySelector(".add");
+    const minus_button = itemEl.querySelector(".remove");
+
+    plus_button.addEventListener("click", () => {
       add_to_cart(itemEl.id.split("-")[1]);
+      console.log(cart);
+    });
+
+    minus_button.addEventListener("click", () => {
+      remove_from_cart(itemEl.id.split("-")[1]);
       console.log(cart);
     });
   }
