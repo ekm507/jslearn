@@ -13,6 +13,12 @@ body {
 }
 
 /* ---------- CART COUNT ---------- */
+
+#cart:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px;
+}
 #cart-count {
     background: #ef4444;
     color: #fff;
@@ -24,7 +30,7 @@ body {
 
 #cart-bar {
     position: sticky;
-    top: 0;
+    top: 1rem;
     z-index: 1000;
 
     background: #ffffff;

@@ -1,5 +1,6 @@
 const API_BASE = "http://localhost:3000";
 const cart = new Object();
+const page_items = new Object();
 
 function add_to_cart(item_id) {
   if (item_id in cart) {
@@ -21,6 +22,10 @@ function remove_from_cart(item_id) {
 async function get_items() {
   const response = await fetch(API_BASE + "/items");
   const items = await response.json();
+
+  for (const item of items) {
+    page_items[item.id] = item;
+  }
 
   const container = document.getElementById("items");
 
@@ -74,6 +79,26 @@ function give_items_click_events() {
       update_cart_count();
     });
   }
+}
+
+function show_cart_items() {
+  document.getElementById("cart-items").innerHTML = "";
+
+  for (const item in cart) {
+    itemEl = document.createElement("p");
+    itemEl.textContent = `${page_items[item].name}: ${cart[item]}`;
+    document.getElementById("cart-items").appendChild(itemEl);
+  }
+}
+
+function give_cart_event() {
+  const cartItems = document.getElementById("cart");
+  cartItems.addEventListener("click", (event) => {
+    // if (event.target.classList.contains("remove")) {
+    //   const itemId = event.target.closest(".item").id.split("-")[1];
+    //   remove_from_cart(itemId);
+    show_cart_items();
+  });
 }
 
 async function main() {
