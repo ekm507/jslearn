@@ -2,6 +2,14 @@
 
 Personal JavaScript learning repository with small exercises and mini projects.
 
+## Current Level
+
+Based on the completed exercises in this repository, this learning path is currently at:
+
+- Early intermediate JavaScript level
+
+You have moved beyond beginner fundamentals and already built multiple browser projects plus simple frontend-backend integrations.
+
 ## Project Structure
 
 ```text
@@ -31,6 +39,70 @@ Note: the folder name is intentionally `excersices` in this repo.
 - Basic SQLite integration
 - Using browser `localStorage`
 - CSS/JS animation basics
+
+## Progress Summary
+
+Completed areas:
+- Core syntax and basic language fluency
+- Functional-style array processing
+- DOM manipulation and event-driven UI
+- Closures and introductory OOP concepts
+- Multi-file mini-project development
+- API consumption with `fetch`
+- Basic Express server development
+- SQLite usage in simple backend scenarios
+
+Current strength:
+- You can build small to medium learning projects end-to-end.
+
+Current gap:
+- You still need deeper mastery of advanced JavaScript behavior, engineering practices, and production-style patterns.
+
+## What To Learn Next
+
+Recommended order:
+
+1. Advanced JavaScript fundamentals
+- Scope and hoisting details
+- `this` binding rules
+- Prototype chain and inheritance model
+- Event loop, microtasks vs macrotasks
+- Promises and `async/await` patterns
+
+2. Code organization and reliability
+- Better module structure and reusable components
+- Strong error handling patterns
+- Input validation and defensive coding
+
+3. Testing
+- Unit testing (`Vitest` or `Jest`)
+- Integration testing for API + frontend flow
+- Mocking API calls and edge cases
+
+4. Tooling and workflow
+- `npm` scripts for dev/test/build
+- ESLint + Prettier
+- Vite-based development workflow
+- Environment variable management
+
+5. Browser and UI engineering depth
+- URL state and query parameters
+- Debounce/throttle and performance basics
+- Accessibility fundamentals (semantic HTML, keyboard support)
+
+6. Backend fundamentals (next level)
+- REST API design conventions
+- Middleware architecture
+- Auth basics (session/JWT concepts)
+- Database schema evolution/migrations
+
+7. TypeScript
+- Basic typing for functions, objects, and APIs
+- Gradual migration from JavaScript to TypeScript
+
+8. Data structures and algorithms
+- Complexity basics (Big-O intuition)
+- Common problem-solving patterns
 
 ## How To Run
 
