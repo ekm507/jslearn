@@ -55,8 +55,8 @@
     left: 60%;
     bottom: 10%; /* lifts him a bit from bottom */
     transform: translateX(-50%);
-    animation: wiggle linear infinite alternate-reverse;
-    animation-duration: 1s;
+    /*animation: wiggle linear infinite alternate-reverse;
+    animation-duration: 1s;*/
 }
 
 #clouds {
