@@ -1,5 +1,5 @@
 const API_BASE = "http://localhost:3000";
-const cart = new Object();
+var cart = new Object();
 const page_items = new Object();
 
 function add_to_cart(item_id) {
@@ -101,10 +101,29 @@ function give_cart_event() {
   });
 }
 
+async function load_cart() {
+  const cartData = localStorage.getItem("cart");
+  if (cartData) cart = JSON.parse(cartData);
+  else return;
+  for (const item in cart) {
+    document
+      .getElementById(`item-${item}`)
+      .querySelector(".quantity").textContent = cart[item];
+    document.getElementById(`item-${item}`).querySelector(".remove").disabled =
+      false;
+  }
+}
+
+function save_cart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 async function main() {
   await get_items();
+  await load_cart();
   give_items_click_events();
   give_cart_event();
+  window.setInterval(save_cart, 1000);
 }
 
 main();
